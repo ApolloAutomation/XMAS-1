@@ -1,5 +1,5 @@
 substitutions:
-  version: "25.12.4.1"
+  version: "26.8.23.1"
 
 esp32:
   board: esp32-c3-devkitm-1
