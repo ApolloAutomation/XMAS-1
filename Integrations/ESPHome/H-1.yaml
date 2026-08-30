@@ -10,7 +10,7 @@ esphome:
     name: "ApolloAutomation.H-1"
     version: "${version}"
 
-  min_version: 2023.11.1
+  min_version: 2026.8.0
   on_boot:
     - priority: 500
       then:
@@ -59,12 +59,13 @@ update:
   - platform: http_request
     id: firmware_update
     name: Firmware Update
-    source: https://apolloautomation.github.io/H-1/artifact/manifest.json
+    source: https://apolloautomation.github.io/H-1/firmware/manifest.json
 
 wifi:
   on_connect:
     - delay: 5s
     - ble.disable:
+    - component.update: firmware_update
   on_disconnect:
     - ble.enable:
   ap:
